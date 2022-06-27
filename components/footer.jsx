@@ -60,7 +60,7 @@ export default function Footer() {
                         fontSize={'14px'}
                         fontWeight='bold'>
                         <Link onClick={() => router.push('/')} href='/'>Home</Link>
-                        <Link onClick={() => router.push('/postagens')} href='/postagens'>Blog</Link>
+                        <Link onClick={() => router.push('/blogs')} href='/blogs'>Blog</Link>
                     </Stack>
                     <Stack align={'flex-start'}>
                         <Stack direction={{ md: 'column', sm: 'row' }} spacing={3}>

@@ -117,7 +117,7 @@ export default function withAction({ children }) {
               spacing={8}
               display={{ base: 'none', md: 'flex' }}>
               <Menu>
-                <NavLink caminho={'/postagens'} tamanho='uppercase'>Blog</NavLink>
+                <NavLink caminho={'/blogs'} tamanho='uppercase'>Blog</NavLink>
               </Menu>
             </HStack>
             <Button background='none'
@@ -130,7 +130,7 @@ export default function withAction({ children }) {
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as={'nav'} spacing={4} backgroundColor='white'>
                 <Menu>
-                  <NavLink caminho={'/postagens'} tamanho='uppercase'>Blog</NavLink>
+                  <NavLink caminho={'/blogs'} tamanho='uppercase'>Blog</NavLink>
                 </Menu>
 
               </Stack>
