@@ -22,7 +22,7 @@ export default function Blogs({ blogs }) {
     <>
       <Menu>
         <Container maxW={'7xl'}>
-          <SimpleGrid columns={{ lg: 2, md: 1, sm: 1 }}
+          <SimpleGrid columns={{ lg: 3, md: 1, sm: 1 }}
             spacing={10}
             mt='2vw'
             float={'left'}>

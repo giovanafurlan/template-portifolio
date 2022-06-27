@@ -82,7 +82,7 @@ export default function withAction({ children }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const logos = useColorModeValue('/images/logopreto.webp', '/images/logoBranco.webp');
+  const logos = useColorModeValue('/images/logo-template-preto.webp', '/images/logo-template-branco.webp');
   const cor = useColorModeValue('black', 'white');
   const cor2 = useColorModeValue('white', 'black');
 
@@ -108,8 +108,8 @@ export default function withAction({ children }) {
             <Box cursor={'pointer'}>
               <img src={logos}
                 alt="Logo WebPeak"
-                width={120}
-                height={80}
+                width={60}
+                height={40}
                 onClick={() => router.push('/')} />
             </Box>
             <HStack
@@ -117,25 +117,7 @@ export default function withAction({ children }) {
               spacing={8}
               display={{ base: 'none', md: 'flex' }}>
               <Menu>
-                <NavLink caminho={'/servicos'} tamanho='uppercase'>Serviços</NavLink>
-                <NavLink caminho={'/estudoMercado'} tamanho='uppercase'>Estudos de mercado</NavLink>
-                <NavLink caminho={'/segmentos'} tamanho='uppercase'>Segmentos</NavLink>
-                <NavLink caminho={'/contato'} tamanho='uppercase'>Contato</NavLink>
-                <NavLink caminho={'/sobre'} tamanho='uppercase'>Sobre</NavLink>
-                <ButtonMenu>
-                  Parceiros
-                </ButtonMenu>
-                <MenuList>
-                  <VStack flexDir={'column'} spacing={4} alignItems={'left'} padding='10px'>
-                    <NavLink caminho={'/parceiros/sslStore'} tamanho='normal'>SSL Store - Segurança Web</NavLink>
-                    <NavLink caminho={'/parceiros/zoho'} tamanho='normal'>Zoho - Parceiro Advanced</NavLink>
-                    <NavLink caminho={'/parceiros/webpeak'} tamanho='normal'>Parceiro WebPeak - Consultoria WebPeak</NavLink>
-                    <NavLink caminho={'/parceiros/vtex'} tamanho='normal'>VTEX - Plataforma de Ecommerce</NavLink>
-                    <NavLink caminho={'/parceiros/digitalOcean'} tamanho='normal'>Digital Ocean - Cloud</NavLink>
-                    <NavLink caminho={'/parceiros/webflow'} tamanho='normal'>WebFlow - Criação de Sites</NavLink>
-                  </VStack>
-                </MenuList>
-                <NavLink caminho={'/blogs'} tamanho='uppercase'>Blog</NavLink>
+                <NavLink caminho={'/postagens'} tamanho='uppercase'>Blog</NavLink>
               </Menu>
             </HStack>
             <Button background='none'
@@ -148,32 +130,13 @@ export default function withAction({ children }) {
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as={'nav'} spacing={4} backgroundColor='white'>
                 <Menu>
-                  <NavLink caminho={'/servicos'} tamanho='uppercase'>Serviços</NavLink>
-                  <NavLink caminho={'/estudoMercado'} tamanho='uppercase'>Estudos de mercado</NavLink>
-                  <NavLink caminho={'/segmentos'} tamanho='uppercase'>Segmentos</NavLink>
-                  <NavLink caminho={'/contanto'} tamanho='uppercase'>Contato</NavLink>
-                  <NavLink caminho={'/sobre'} tamanho='uppercase'>Sobre</NavLink>
-                  <ButtonMenu>
-                    Parceiros
-                  </ButtonMenu>
-                  <MenuList>
-                    <VStack flexDir={'column'} spacing={4} alignItems={'left'} padding='10px'>
-                      <NavLink caminho={'/parceiros/sslStore'} tamanho='normal'>SSL Store - Segurança Web</NavLink>
-                      <NavLink caminho={'/parceiros/zoho'} tamanho='normal'>Zoho - Parceiro Advanced</NavLink>
-                      <NavLink caminho={'/parceiros/webpeak'} tamanho='normal'>Parceiro WebPeak - Consultoria WebPeak</NavLink>
-                      <NavLink caminho={'/parceiros/vtex'} tamanho='normal'>VTEX - Plataforma de Ecommerce</NavLink>
-                      <NavLink caminho={'/parceiros/digitalOcean'} tamanho='normal'>Digitak Ocean - Cloud</NavLink>
-                      <NavLink caminho={'/parceiros/webflow'} tamanho='normal'>WebFlow - Criação de Sites</NavLink>
-                    </VStack>
-                  </MenuList>
-                  <NavLink caminho={'/blogs'} tamanho='uppercase'>Blog</NavLink>
+                  <NavLink caminho={'/postagens'} tamanho='uppercase'>Blog</NavLink>
                 </Menu>
 
               </Stack>
             </Box>
           ) : null}
         </GridItem>
-
         <GridItem marginTop={'100px'}>{children}</GridItem>
       </Grid>
     </>
