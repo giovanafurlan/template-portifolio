@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
 export default function Seo({
-  description = 'WebPeak',
-  author = 'WebPeak',
+  description = '',
+  author = 'Giovana Furlan',
   meta,
-  title = 'WebPeak',
+  title = 'Template',
 }: any) {
   const metaData = [
     { name: `description`, content: description, },

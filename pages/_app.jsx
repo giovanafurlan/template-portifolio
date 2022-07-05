@@ -41,8 +41,8 @@ function MyApp({ Component, pageProps }) {
         <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover' />
       </Head>
       <Seo
-        title="WebPeak Consultoria"
-        description="Some description"
+        title="Template"
+        description=""
       />
       <Component {...pageProps} />
     </ChakraProvider>

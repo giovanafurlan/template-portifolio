@@ -10,8 +10,7 @@ import {
 import fs from 'fs'
 import matter from 'gray-matter'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import Menu from '../../components/menu.jsx'
-import Rodape from '../../components/footer'
+import Menu from '../../components/menu.tsx'
 import { useAmp } from 'next/amp';
 
 export default function Blogs({ blogs }) {
@@ -64,7 +63,6 @@ export default function Blogs({ blogs }) {
           </SimpleGrid>
         </Container>
       </Menu>
-      <Rodape />
     </>
   )
 }

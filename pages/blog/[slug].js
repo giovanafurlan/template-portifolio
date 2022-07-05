@@ -6,7 +6,6 @@ import fs from 'fs'
 import ReactMarkdown from 'react-markdown'
 import matter from 'gray-matter'
 import Menu from '../../components/menu.jsx'
-import Footer from '../../components/footer.jsx'
 import { useAmp } from 'next/amp';
 
 export default function Blog({ frontmatter, markdown}) {
@@ -31,7 +30,6 @@ export default function Blog({ frontmatter, markdown}) {
         </ReactMarkdown>
       </Container>
     </Menu>
-    <Footer />
     </>
   )
 }

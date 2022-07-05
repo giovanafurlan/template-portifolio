@@ -20,3 +20,9 @@ module.exports = withPWA({
     dest: 'public'
   }
 });
+
+const nextTranslate = require("next-translate");
+
+module.exports = nextTranslate({
+  reactStrictMode: true,
+});
