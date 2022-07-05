@@ -14,12 +14,12 @@ export default function DarkLight() {
         <Box>
             <Button background={'none'}
                 borderWidth='1px'
-                color={'gray.300'}
-                m='10px'
                 onClick={toggleColorMode}
-                _hover={{ bg: 'gray.700' }}
-                _focus={{ boxShadow: 'outline' }}
-                borderRadius='5px'>
+                _hover={{ bg: 'none' }}
+                _focus={{ boxShadow: 'outline', bg: 'none' }}
+                borderRadius='5px'
+                px='2.5'
+                py='2.5'>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
             </Button>
         </Box>

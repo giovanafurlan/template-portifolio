@@ -29,41 +29,17 @@ const SwitchLanguage = () => {
 
     return (
         <main onLoad={usePersistLocaleCookie}>
-            <Menu>
-                <MenuButton display={{ xl: 'inline-block', md: 'none', sm: 'none' }}
-                    p='2'
-                    transition='all 0.2s'
-                    borderRadius='md'
-                    borderWidth='1px'
-                    m='10px'
-                    fontSize={'sm'}
-                    _hover={{ bg: 'gray.700' }}
-                    _focus={{ boxShadow: 'outline' }}
-                    id="dropdown-basic-button">{t("menu")}</MenuButton>
-                <MenuList minW={'4.5vw'} fontSize='sm'>
-                    {locales.map(lng => {
-                        if (lng === lang) return null;
-                        return (
-                            <Link href="" locale={lng} key={lng}>
-                                {t("language-name")}
-                            </Link>
-                        );
-                    })}
-                </MenuList>
-            </Menu>
             <Menu >
-                <MenuButton display={{ xl: 'none', sm: 'inline-block' }}
-                    p='2'
+                <MenuButton px='2.5'
+                    py='2.5'
                     transition='all 0.2s'
                     borderRadius='md'
                     borderWidth='1px'
-                    color={'gray.300'}
-                    m='10px'
                     fontSize={'lg'}
-                    _hover={{ bg: 'gray.400' }}
                     _focus={{ boxShadow: 'outline' }}
                     id="dropdown-basic-button"><IoLanguage /></MenuButton>
-                <MenuList>
+                <MenuList minW={'min-content'}
+                    px='2'>
                     {locales.map(lng => {
                         if (lng === lang) return null;
                         return (

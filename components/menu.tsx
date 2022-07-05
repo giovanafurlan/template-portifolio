@@ -88,7 +88,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
           </NavItem>
         </Link>
       </Box>
-      <Flex align={'center'}>
+      <Flex align={'center'}
+        justifyContent='space-evenly'>
         <DarkLight />
         <Language />
       </Flex>

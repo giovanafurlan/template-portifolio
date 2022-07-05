@@ -3,7 +3,7 @@ import {
   extendTheme,
 } from "@chakra-ui/react";
 import Head from "next/head";
-import Seo from '../components/seo.tsx'
+import Seo from '../components/seo.tsx';
 
 const colors = {
   brand: {
@@ -14,7 +14,7 @@ const colors = {
 
 const fonts = {
   fonts: {
-    heading: 'Open Sans, sans-serif',
+    heading: 'Bungee Shade, cursive',
     body: 'Raleway, sans-serif',
   },
 }

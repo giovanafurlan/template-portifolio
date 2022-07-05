@@ -1,5 +1,5 @@
 import {
-  Container,
+  Container, Heading,
 } from '@chakra-ui/react';
 import Menu from '../components/menu.tsx';
 import React from 'react';
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Menu>
       <Container maxW={'7xl'}>
-        
+        <Heading>Teste</Heading>
       </Container>
     </Menu>
 
