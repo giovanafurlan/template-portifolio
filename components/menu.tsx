@@ -89,7 +89,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Link>
       </Box>
       <Flex align={'center'}
-        justifyContent='space-evenly'>
+        justifyContent='center'>
         <DarkLight />
         <Language />
       </Flex>
