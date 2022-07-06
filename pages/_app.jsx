@@ -15,7 +15,7 @@ const colors = {
 const fonts = {
   fonts: {
     heading: 'Bungee Shade, cursive',
-    body: 'Raleway, sans-serif',
+    body: 'Bungee Shade, cursive',
   },
 }
 

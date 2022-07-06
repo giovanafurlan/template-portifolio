@@ -9,7 +9,6 @@ import {
   Link,
   Drawer,
   DrawerContent,
-  Text,
   useDisclosure,
   BoxProps,
   FlexProps,
@@ -27,6 +26,7 @@ import Language from './language';
 
 export default function SimpleSidebar({ children }: { children: ReactNode }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
       <SidebarContent
@@ -61,6 +61,7 @@ interface SidebarProps extends BoxProps {
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const router = useRouter();
   const { t } = useTranslation("common");
+  const logos = useColorModeValue('/images/logo-preto.webp', '/images/logo-branco.webp');
 
   return (
     <Box
@@ -70,10 +71,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
-      textAlign={'center'}
-      display='flex'
-      justifyContent={'center'}
       {...rest}>
+<<<<<<< HEAD
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
           Logo
@@ -92,6 +91,32 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         justifyContent='center'>
         <DarkLight />
         <Language />
+=======
+      <CloseButton display={{ base: 'flex', md: 'none' }} float='right' onClick={onClose} />
+      <Flex flexDir={'column'}>
+        <Box display={{ base: 'none', md: 'flex' }}
+          pl='10px'
+          pt='20px'>
+          <img src={logos}
+            alt="Logo"
+            width={220}
+            height={80}
+            onClick={() => router.push('/')} />
+        </Box>
+        <Box>
+          <Link onClick={() => router.push('/')}
+            _hover={{ textDecor: 'none' }}>
+            <NavItem icon={FiHome}>
+              {t("home")}
+            </NavItem>
+          </Link>
+        </Box>
+        <Flex justifyContent={'center'}>
+          <DarkLight />
+          <Language />
+        </Flex>
+
+>>>>>>> 8a0cde74162a63a9b1c99ed5814b4a31d73e54c3
       </Flex>
     </Box >
   );
@@ -134,6 +159,9 @@ interface MobileProps extends FlexProps {
   onOpen: () => void;
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
+  const router = useRouter();
+  const logos = useColorModeValue('/images/logo-preto.webp', '/images/logo-branco.webp');
+
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -151,10 +179,13 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
         aria-label="open menu"
         icon={<FiMenu />}
       />
-
-      <Text fontSize="2xl" ml="8" fontFamily="monospace" fontWeight="bold">
-        Logo
-      </Text>
+      <Box pl='10px'>
+        <img src={logos}
+          alt="Logo"
+          width={220}
+          height={80}
+          onClick={() => router.push('/')} />
+      </Box>
     </Flex>
   );
 };
