@@ -6,5 +6,8 @@
     "menu": "Language",
 
   "__comment1__": "Menu",
-    "home": "Home"
+    "home": "Home",
+    "conhecimentos": "Skills",
+    "projetos": "Projects",
+    "contato": "Contact"
 }

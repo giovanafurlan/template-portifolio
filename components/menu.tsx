@@ -4,7 +4,6 @@ import {
   Box,
   CloseButton,
   Flex,
-  Icon,
   useColorModeValue,
   Link,
   Drawer,
@@ -12,14 +11,22 @@ import {
   useDisclosure,
   BoxProps,
   FlexProps,
+  Image,
 } from '@chakra-ui/react';
 import {
   FiHome,
   FiMenu,
+  FiGrid,
+  FiMessageSquare,
+  FiFolder,
+  FiYoutube,
+  FiLinkedin,
+  FiGithub,
+  FiInstagram
 } from 'react-icons/fi';
-import { IconType } from 'react-icons';
 import { ReactText } from 'react';
 import { useRouter } from 'next/router';
+import { IconType } from 'react-icons';
 import useTranslation from 'next-translate/useTranslation';
 import DarkLight from './darkLight';
 import Language from './language';
@@ -61,7 +68,7 @@ interface SidebarProps extends BoxProps {
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const router = useRouter();
   const { t } = useTranslation("common");
-  const logos = useColorModeValue('/images/logo-preto.webp', '/images/logo-branco.webp');
+  const logos = useColorModeValue('/images/logo.png', '/images/logo.png');
 
   return (
     <Box
@@ -72,51 +79,72 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       pos="fixed"
       h="full"
       {...rest}>
-<<<<<<< HEAD
-      <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
-        <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
-        </Text>
-        <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
-      </Flex>
-      <Box>
-        <Link onClick={() => router.push('/')}
-          _hover={{ textDecor: 'none' }}>
-          <NavItem icon={FiHome}>
-            {t("home")}
-          </NavItem>
-        </Link>
-      </Box>
-      <Flex align={'center'}
-        justifyContent='center'>
-        <DarkLight />
-        <Language />
-=======
       <CloseButton display={{ base: 'flex', md: 'none' }} float='right' onClick={onClose} />
-      <Flex flexDir={'column'}>
-        <Box display={{ base: 'none', md: 'flex' }}
-          pl='10px'
-          pt='20px'>
-          <img src={logos}
-            alt="Logo"
-            width={220}
-            height={80}
-            onClick={() => router.push('/')} />
-        </Box>
+      <Flex flexDir={'column'} height='100vh' justifyContent={'space-between'}>
         <Box>
+          <Box display={{ base: 'none', md: 'flex' }}
+            pl='50px'
+            pt='20px'>
+            <img src={logos}
+              alt="Logo"
+              width={100}
+              height={50} />
+          </Box>
           <Link onClick={() => router.push('/')}
             _hover={{ textDecor: 'none' }}>
-            <NavItem icon={FiHome}>
+            <NavItem icon={FiHome}
+              mt='20px'>
               {t("home")}
             </NavItem>
           </Link>
+          <Link onClick={() => router.push('/')}
+            _hover={{ textDecor: 'none' }}>
+            <NavItem icon={FiFolder}>
+              {t("conhecimentos")}
+            </NavItem>
+          </Link>
+          <Link onClick={() => router.push('/')}
+            _hover={{ textDecor: 'none' }}>
+            <NavItem icon={FiGrid}>
+              {t("projetos")}
+            </NavItem>
+          </Link>
+          <Link onClick={() => router.push('/')}
+            _hover={{ textDecor: 'none' }}>
+            <NavItem icon={FiMessageSquare}
+              mb='20px'>
+              {t("contato")}
+            </NavItem>
+          </Link>
         </Box>
-        <Flex justifyContent={'center'}>
-          <DarkLight />
-          <Language />
-        </Flex>
-
->>>>>>> 8a0cde74162a63a9b1c99ed5814b4a31d73e54c3
+        <Box mb='20px'>
+          <Flex justifyContent={'center'}>
+            <DarkLight />
+            <Language />
+          </Flex>
+          <Flex justifyContent={'center'} mt='20px'>
+            <Link href='https://www.instagram.com/giifurlan/'
+              target={'_blank'}
+              _hover={{ textDecor: 'none' }}>
+              <SocialMedia icon={FiInstagram} />
+            </Link>
+            <Link href='https://github.com/giovanafurlan'
+              target={'_blank'}
+              _hover={{ textDecor: 'none' }}>
+              <SocialMedia icon={FiGithub} />
+            </Link>
+            <Link href='https://www.youtube.com/channel/UC1rx7l1472oVdS7HBHY19cA'
+              target={'_blank'}
+              _hover={{ textDecor: 'none' }}>
+              <SocialMedia icon={FiYoutube} />
+            </Link>
+            <Link href='https://www.linkedin.com/in/giovana-furlan/'
+              target={'_blank'}
+              _hover={{ textDecor: 'none' }}>
+              <SocialMedia icon={FiLinkedin} />
+            </Link>
+          </Flex>
+        </Box>
       </Flex>
     </Box >
   );
@@ -135,22 +163,37 @@ const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
       borderRadius="lg"
       role="group"
       cursor="pointer"
-      _hover={{
-        bg: 'gray.400',
-        color: 'white',
-      }}
       {...rest}>
       {icon && (
-        <Icon
+        <Image
           mr="4"
-          fontSize="16"
+          fontSize="20"
+          as={icon}
+        />
+      )}
+      {children}
+    </Flex>
+  );
+};
+
+interface SocialMediaProps extends FlexProps {
+  icon: IconType;
+}
+const SocialMedia = ({ icon, ...rest }: SocialMediaProps) => {
+  return (
+    <Flex justifyContent={'center'}
+      cursor="pointer"
+      {...rest}>
+      {icon && (
+        <Image
+          mr="4"
+          fontSize="18"
           _groupHover={{
             color: 'white',
           }}
           as={icon}
         />
       )}
-      {children}
     </Flex>
   );
 };
@@ -160,7 +203,7 @@ interface MobileProps extends FlexProps {
 }
 const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
   const router = useRouter();
-  const logos = useColorModeValue('/images/logo-preto.webp', '/images/logo-branco.webp');
+  const logos = useColorModeValue('/images/logo.png', '/images/logo.png');
 
   return (
     <Flex
@@ -182,9 +225,8 @@ const MobileNav = ({ onOpen, ...rest }: MobileProps) => {
       <Box pl='10px'>
         <img src={logos}
           alt="Logo"
-          width={220}
-          height={80}
-          onClick={() => router.push('/')} />
+          width={80}
+          height={40} />
       </Box>
     </Flex>
   );

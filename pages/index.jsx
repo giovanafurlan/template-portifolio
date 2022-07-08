@@ -13,9 +13,7 @@ export default function Home() {
 
   return (
     <Menu>
-      <Container maxW={'7xl'}>
-        <Heading>Teste</Heading>
-      </Container>
+      
     </Menu>
 
   );

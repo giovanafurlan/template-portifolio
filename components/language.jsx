@@ -28,7 +28,7 @@ const SwitchLanguage = () => {
     }
 
     return (
-        <main onLoad={usePersistLocaleCookie}>
+        <main onLoad={usePersistLocaleCookie} >
             <Menu >
                 <MenuButton px='2.5'
                     py='2.5'
